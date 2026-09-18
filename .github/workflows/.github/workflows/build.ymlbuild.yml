@@ -1,0 +1,16 @@
+name: Build APK
+on:
+  workflow_dispatch:
+    inputs:
+      server_name:
+        required: true
+      api_link:
+        required: true
+      chat_id:
+        required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print inputs
+        run: echo "Building for ${{ inputs.server_name }}"
